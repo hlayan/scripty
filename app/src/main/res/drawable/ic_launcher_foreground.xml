@@ -15,11 +15,11 @@
                 android:fillColor="#FFFFFF"
                 android:pathData="M0,0h648v648h-648z" />
             <path
-                android:fillColor="#ACA8A5"
+                android:fillColor="#ED7D31"
                 android:fillType="evenOdd"
                 android:pathData="M214.43,178.2 L462.08,158.57 401.13,230.01 285.27,239.2 294.45,355.07 234.07,425.85Z" />
             <path
-                android:fillColor="#ACA8A5"
+                android:fillColor="#ED7D31"
                 android:fillType="evenOdd"
                 android:pathData="M433.42,469.96 L185.76,489.3 246.79,417.93 362.67,408.88 353.62,293 414.09,222.29Z" />
         </group>
