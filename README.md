@@ -1,4 +1,4 @@
-# scripty
+# Scripty
 A simple editor that make easy to type superscript and subscript
 
 ## Screenshots
@@ -12,12 +12,18 @@ A simple editor that make easy to type superscript and subscript
    </tr>
 </table>
 
-
 ## Download
 
 You can easily install from [google play](https://play.google.com/store/apps/details?id=com.hlayan.scripty&hl=en).
 
 For directly download, see [releases](https://github.com/hlayan/scripty/releases)
+
+## Why Scripty?
+- Easy to use
+- Not busy with switching keyboard
+
+## Upcoming Features
+I have planned for saving specific word or phrase so that user don't need to type every time they need.
 
 ### Superscripts
 
