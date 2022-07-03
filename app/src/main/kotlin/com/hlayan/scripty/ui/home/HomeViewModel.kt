@@ -20,12 +20,11 @@ class HomeViewModel @Inject constructor() : ViewModel() {
     val inputValue: State<TextFieldValue> get() = _inputValue
 
     fun updateInputType(newType: InputType) {
-        Timber.i(_inputType.value.toString())
+        Timber.i(newType.toString())
         _inputType.value = newType
     }
 
     fun updateInputValue(newValue: TextFieldValue) {
-
         Timber.i(newValue.toString())
 
         val start = _inputValue.value.selection.min
@@ -34,7 +33,12 @@ class HomeViewModel @Inject constructor() : ViewModel() {
         val oldText = _inputValue.value.text
 
         fun getScripted(): TextFieldValue {
-            return newValue.run { copy(text.scriptRange(start, end, _inputType.value)) }
+            return newValue.run {
+                copy(
+                    text = text.scriptRange(start, end, _inputType.value),
+                    composition = null
+                )
+            }
         }
 
         _inputValue.value = when {
@@ -43,13 +47,10 @@ class HomeViewModel @Inject constructor() : ViewModel() {
             newValue.text.length < oldText.length -> {
                 if (_inputValue.value.selection.collapsed || start == end) newValue
                 else getScripted()
-
             }
             newValue.text.length == oldText.length -> {
                 when {
-                    start == end -> {
-                        _inputValue.value.copy(composition = newValue.composition)
-                    }
+                    start == end -> _inputValue.value.copy(composition = newValue.composition)
                     !newValue.selection.collapsed || newValue.text == oldText -> newValue
                     else -> getScripted()
                 }
