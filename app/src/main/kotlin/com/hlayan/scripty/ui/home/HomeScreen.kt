@@ -25,6 +25,17 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
     val scope = rememberCoroutineScope()
     val clipboardManager = LocalClipboardManager.current
 
+    fun copyToClipboard() {
+        clipboardManager.setText(viewModel.inputValue.value.annotatedString)
+
+        scope.launch {
+            scaffoldState.snackbarHostState.showSnackbar(
+                message = "Copied to Clipboard",
+                actionLabel = "Close"
+            )
+        }
+    }
+
     Scaffold(scaffoldState = scaffoldState) {
         Column(
             modifier = Modifier
@@ -36,9 +47,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
             verticalArrangement = Arrangement.Center
         ) {
 
-            ToggleButton(viewModel.inputType.value) {
-                viewModel.updateInputType(it)
-            }
+            ToggleButton(viewModel.inputType.value, viewModel::updateInputType)
 
             Spacer(Modifier.size(8.dp))
 
@@ -46,23 +55,12 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                 value = viewModel.inputValue.value,
                 onValueChange = viewModel::updateInputValue,
                 modifier = Modifier.fillMaxWidth(),
-                singleLine = false,
                 trailingIcon = {
-                    IconButton(onClick = {
-                        clipboardManager.setText(viewModel.inputValue.value.annotatedString)
-
-                        scope.launch {
-                            scaffoldState.snackbarHostState.showSnackbar(
-                                message = "Copied to Clipboard",
-                                actionLabel = "Close"
-                            )
-                        }
-                    }) {
+                    IconButton(onClick = { copyToClipboard() }) {
                         Icon(imageVector = Icons.Default.ContentCopy, contentDescription = null)
                     }
                 }
             )
-
         }
     }
 }
