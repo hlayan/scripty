@@ -1,5 +1,15 @@
-# scripty
+# Scripty
 A simple editor that make easy to type superscript and subscript
+
+There are many keyboards out there for typing superscript and subscript.
+However, It's not easy to use for eveyone.
+For example, I need to type "H₂O" and then I have to switch specific keyboard to type '₂'.
+After switching other keyboard, I type '₂' from that keyboard and then I have to switch back my keyboard again.
+That's so annoying for users to type superscript and subscript.
+
+Now we have "Scripty", when we need to type "H₂O", 
+just open "Scripty" app and choose what you want to type, 
+and type from your keyboard Whatever keyboard you are using.
 
 ## Screenshots
 
@@ -12,12 +22,18 @@ A simple editor that make easy to type superscript and subscript
    </tr>
 </table>
 
-
 ## Download
 
 You can easily install from [google play](https://play.google.com/store/apps/details?id=com.hlayan.scripty&hl=en).
 
 For directly download, see [releases](https://github.com/hlayan/scripty/releases)
+
+## Why Scripty?
+- Easy to use
+- Not busy with switching keyboard
+
+## Upcoming Features
+I have planned for saving specific word or phrase so that user don't need to type every time they need.
 
 ### Superscripts
 
