@@ -5,7 +5,6 @@ A simple editor that make easy to type `superscript` and `subscript`
 
 <table align="center">
    <tr>
-      <td><img src="https://github.com/hlayan/scripty/blob/main/screenshots/1.PNG"></td>
       <td><img src="https://github.com/hlayan/scripty/blob/main/screenshots/2.PNG"></td>
       <td><img src="https://github.com/hlayan/scripty/blob/main/screenshots/3.PNG"></td>
       <td><img src="https://github.com/hlayan/scripty/blob/main/screenshots/4.PNG"></td>
