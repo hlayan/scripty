@@ -30,8 +30,7 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 
         scope.launch {
             scaffoldState.snackbarHostState.showSnackbar(
-                message = "Copied to Clipboard",
-                actionLabel = "Close"
+                message = "Copied to Clipboard", actionLabel = "Close"
             )
         }
     }
@@ -51,16 +50,14 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 
             Spacer(Modifier.size(8.dp))
 
-            OutlinedTextField(
-                value = viewModel.inputValue.value,
+            OutlinedTextField(value = viewModel.inputValue.value,
                 onValueChange = viewModel::updateInputValue,
                 modifier = Modifier.fillMaxWidth(),
                 trailingIcon = {
                     IconButton(onClick = { copyToClipboard() }) {
                         Icon(imageVector = Icons.Default.ContentCopy, contentDescription = null)
                     }
-                }
-            )
+                })
         }
     }
 }

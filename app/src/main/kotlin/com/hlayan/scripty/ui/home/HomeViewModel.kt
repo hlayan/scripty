@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import com.hlayan.scripty.data.local.InputType
 import com.hlayan.scripty.extensions.scriptRange
 import dagger.hilt.android.lifecycle.HiltViewModel
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -20,12 +19,10 @@ class HomeViewModel @Inject constructor() : ViewModel() {
     val inputValue: State<TextFieldValue> get() = _inputValue
 
     fun updateInputType(newType: InputType) {
-        Timber.i(newType.toString())
         _inputType.value = newType
     }
 
     fun updateInputValue(newValue: TextFieldValue) {
-        Timber.i(newValue.toString())
 
         val start = _inputValue.value.selection.min
         val end = newValue.selection.max
@@ -35,8 +32,7 @@ class HomeViewModel @Inject constructor() : ViewModel() {
         fun getScripted(): TextFieldValue {
             return newValue.run {
                 copy(
-                    text = text.scriptRange(start, end, _inputType.value),
-                    composition = null
+                    text = text.scriptRange(start, end, _inputType.value), composition = null
                 )
             }
         }
